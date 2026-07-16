@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rashid Dental Clinic — Premium dental care with AI-powered assistance. Book your appointment today.">
+  <title>Rashid Dental Clinic — AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/variables.css">
+  <link rel="stylesheet" href="src/styles/reset.css">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <link rel="stylesheet" href="src/styles/chatbot.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#" class="nav-logo">Rashid<span>Dental</span></a>
+      <div class="nav-links" role="menubar">
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#about" role="menuitem">About</a>
+        <a href="#contact" role="menuitem">Contact</a>
+        <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Welcome">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          AI-Powered Dental Assistant
+        </div>
+        <h1>Your Smile, Our <span class="highlight">Priority</span></h1>
+        <p>Experience premium dental care with the convenience of AI-powered assistance. Book appointments, get instant answers, and discover a healthier smile.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+          <a href="#services" class="btn btn-secondary">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-illustration">
+          <div class="hero-illustration-inner">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M50 20c-8 0-14 6-14 14 0 4 2 8 5 10l-3 24 12-6 12 6-3-24c3-2 5-6 5-10 0-8-6-14-14-14z"/>
+              <circle cx="44" cy="32" r="2" fill="currentColor"/>
+              <circle cx="56" cy="32" r="2" fill="currentColor"/>
+              <path d="M46 38c0 0 2 2 4 2s4-2 4-2"/>
+            </svg>
+            <p>AI-Powered Dental Care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar" aria-label="Trust indicators">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Expert Team</h3>
+          <p>Qualified dental professionals with years of experience</p>
+        </div>
+        <div class="trust-item reveal">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Modern Technology</h3>
+          <p>State-of-the-art equipment for precise and comfortable care</p>
+        </div>
+        <div class="trust-item reveal">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Gentle Care</h3>
+          <p>Compassionate treatment in a calm, anxiety-free environment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Assistant -->
+  <section class="section ai-section" id="about" aria-label="AI Assistant">
+    <div class="container">
+      <div class="ai-content">
+        <div class="ai-text reveal">
+          <h2>Meet Your AI Dental Assistant</h2>
+          <p>Our intelligent AI assistant is available 24/7 to answer your questions instantly. Get information about services, appointments, clinic hours, and more — all through a simple chat.</p>
+          <div class="ai-features">
+            <div class="ai-feature">
+              <div class="ai-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              </div>
+              <div>
+                <h4>Instant Answers</h4>
+                <p>Get immediate responses to your questions about our clinic and services</p>
+              </div>
+            </div>
+            <div class="ai-feature">
+              <div class="ai-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4>Verified Information</h4>
+                <p>All answers are grounded in our verified clinic knowledge base</p>
+              </div>
+            </div>
+            <div class="ai-feature">
+              <div class="ai-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4>Available 24/7</h4>
+                <p>Ask questions anytime, day or night — no waiting required</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ai-visual reveal">
+          <div class="hero-illustration">
+            <div class="hero-illustration-inner">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="15" y="20" width="70" height="60" rx="8"/>
+                <circle cx="50" cy="45" r="8" fill="currentColor"/>
+                <path d="M36 60c0 0 6 8 14 8s14-8 14-8"/>
+                <line x1="30" y1="30" x2="40" y2="30"/>
+                <line x1="30" y1="36" x2="36" y2="36"/>
+                <line x1="60" y1="30" x2="70" y2="30"/>
+                <line x1="64" y1="36" x2="70" y2="36"/>
+              </svg>
+              <p>Try the chat button below!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services" id="services" aria-label="Our Services">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Our Dental Services</h2>
+        <p>Comprehensive dental care for the whole family — from routine check-ups to advanced cosmetic procedures.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" style="transition-delay: 0.05s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>General Dentistry</h3>
+          <p>Comprehensive check-ups, professional cleanings, digital X-rays, fillings, and extractions to maintain optimal oral health.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.1s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+          </div>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Professional teeth whitening, premium veneers, and composite bonding to give you a radiant, confident smile.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.15s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Restorative Dentistry</h3>
+          <p>Custom crowns, bridges, dental implants, and dentures to restore function and aesthetics to your smile.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.2s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>Orthodontics</h3>
+          <p>Traditional braces and clear aligner treatments for straighter teeth and a properly aligned bite.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.25s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Periodontal Care</h3>
+          <p>Scaling and root planing, gum disease treatment, and periodontal maintenance for healthy gums.</p>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.3s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          </div>
+          <h3>Emergency Care</h3>
+          <p>Prompt attention for dental emergencies including severe pain, broken teeth, and urgent dental trauma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section why-choose-us" aria-label="Why Choose Us">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Why Choose Rashid Dental?</h2>
+        <p>We combine clinical excellence with compassionate care to deliver the best dental experience.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Safe & Sterile</h3>
+          <p>We follow the highest sterilization standards and infection control protocols to ensure your safety.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3>Anxiety-Free Options</h3>
+          <p>We offer sedation dentistry and a calm, welcoming environment for patients with dental anxiety.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>AI-Powered Assistance</h3>
+          <p>Get instant answers and appointment support through our intelligent AI chatbot, available 24/7.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Modern Equipment</h3>
+          <p>We invest in the latest dental technology for precise diagnoses and minimally invasive treatments.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Experienced Team</h3>
+          <p>Our dental professionals bring years of experience and continuous education to every procedure.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Comprehensive Care</h3>
+          <p>From routine cleanings to complex restorations, all your dental needs in one convenient location.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact" aria-label="Contact Us">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Get In Touch</h2>
+        <p>Ready to book your appointment? Contact us through any of the channels below or fill in the form.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Contact Information</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Address</h4>
+                <p>123 Healthcare Avenue, Medical District, City 12345</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>info@rashiddental.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>Mon — Fri: 9:00 AM — 6:00 PM<br>Sat: 10:00 AM — 2:00 PM<br>Sun: Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-card reveal">
+          <h3>Send Us a Message</h3>
+          <p>Fill in the form and we'll get back to you promptly.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="How can we help you?" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+            <p class="form-note">We respect your privacy. Your information will not be shared.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Rashid<span>Dental</span></h3>
+          <p>Premium dental care powered by AI assistance. Your smile is our priority — experience the future of dental healthcare today.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">General Dentistry</a></li>
+            <li><a href="#services">Cosmetic Dentistry</a></li>
+            <li><a href="#services">Orthodontics</a></li>
+            <li><a href="#services">Emergency Care</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#contact">+1 (555) 123-4567</a></li>
+            <li><a href="#contact">info@rashiddental.com</a></li>
+            <li><a href="#contact">Book Appointment</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rashid Dental Clinic. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <button id="chatbot-trigger" class="chatbot-trigger" aria-label="Open chat" title="Chat with AI Assistant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+
+  <div id="chatbot-window" class="chatbot-window" role="dialog" aria-label="AI Chat Assistant">
+    <div class="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="chatbot-header-text">
+          <h3>Dental Assistant</h3>
+          <p>AI-Powered • Online</p>
+        </div>
+      </div>
+      <div class="chatbot-header-actions">
+        <button id="chatbot-restart" aria-label="Restart conversation" title="Restart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+        </button>
+        <button id="chatbot-close" aria-label="Close chat" title="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="chatbot-messages" class="chatbot-messages" role="log" aria-live="polite" aria-label="Chat messages"></div>
+
+    <div id="chatbot-suggestions" class="chatbot-suggestions"></div>
+
+    <div id="chatbot-error" class="chatbot-error" role="alert" style="display: none;"></div>
+
+    <div class="chatbot-input-area">
+      <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Type your message..." aria-label="Type your message" autocomplete="off">
+      <button id="chatbot-send" class="chatbot-send" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="src/scripts/main.js"></script>
+  <script src="src/scripts/chatbot.js"></script>
+</body>
+</html>
