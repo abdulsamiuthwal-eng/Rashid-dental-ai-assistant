@@ -217,9 +217,16 @@
     })
       .then(function (res) {
         if (!res.ok) {
-          if (res.status === 503) throw new Error('Service unavailable');
-          if (res.status === 422) throw new Error('Invalid input');
-          throw new Error('Server error');
+          return res.json().then(function (errData) {
+            var serverMsg = (errData && errData.detail && errData.detail.message)
+              ? errData.detail.message
+              : (errData && errData.detail ? JSON.stringify(errData.detail) : 'HTTP ' + res.status);
+            console.error('[Chatbot] Server error ' + res.status + ':', errData);
+            throw new Error('SERVER_' + res.status + ':' + serverMsg);
+          }).catch(function (e) {
+            if (e.message && e.message.startsWith('SERVER_')) throw e;
+            throw new Error('HTTP ' + res.status);
+          });
         }
         return res.json();
       })
@@ -229,16 +236,20 @@
       })
       .catch(function (err) {
         removeTyping();
-        if (err.message === 'Failed to fetch' || err.message === 'NetworkError') {
-          showError('Unable to connect to the server. Please make sure the backend is running.');
-          addAssistantMessage(
-            'I apologize, but I am currently unable to connect to my services. Please ensure the server is running, or try again later. You can also contact Rashid Dental Clinic directly for assistance.'
-          );
+        console.error('[Chatbot] Error:', err.message);
+
+        if (!err.message || err.message === 'Failed to fetch' || err.message.includes('NetworkError') || err.message.includes('fetch')) {
+          showError('Unable to connect to the server. Please check your connection.');
+          addAssistantMessage('I am currently unable to connect. Please ensure the server is running or try again later.');
+        } else if (err.message.includes('SERVER_503') || err.message.includes('SERVICE_UNAVAILABLE')) {
+          showError('AI service initializing — please wait a moment and try again.');
+          addAssistantMessage('The AI assistant is warming up. Please wait 30 seconds and try again. This usually happens right after deployment.');
+        } else if (err.message.includes('SERVER_500')) {
+          showError('An internal server error occurred. Please try again.');
+          addAssistantMessage('I encountered an internal error. Please try again in a moment.');
         } else {
           showError('Something went wrong. Please try again or contact the clinic directly.');
-          addAssistantMessage(
-            'I apologize, but I encountered an error processing your request. Please try again, or contact Rashid Dental Clinic directly for assistance.'
-          );
+          addAssistantMessage('I apologize, but I encountered an error processing your request. Please try again, or contact Rashid Dental Clinic directly for assistance.');
         }
       })
       .finally(function () {
