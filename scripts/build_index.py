@@ -107,7 +107,9 @@ def main() -> None:
     if not args.mock:
         print("          (This calls the Google API - may take a moment)\n")
 
-    embedder = Embedder(mode=mode)
+    from backend.app.core.config import settings
+
+    embedder = Embedder(mode=mode, api_key=settings.gemini_api_key)
     store = VectorStore(index_path=_INDEX_PATH, meta_path=_META_PATH)
     store.build(all_chunks, embedder)
 

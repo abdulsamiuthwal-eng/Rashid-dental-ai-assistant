@@ -68,10 +68,10 @@ class Embedder:
         self._mode = mode
 
         if self._mode == EmbedderMode.LIVE:
-            resolved_key = api_key or os.getenv("GOOGLE_API_KEY", "")
+            resolved_key = api_key or os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY") or ""
             if not resolved_key:
                 raise OSError(
-                    "GOOGLE_API_KEY is required for live embedding. "
+                    "GOOGLE_API_KEY or GEMINI_API_KEY is required for live embedding. "
                     "Add it to your .env file or pass api_key= directly."
                 )
             genai.configure(api_key=resolved_key)
