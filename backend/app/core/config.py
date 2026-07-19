@@ -104,7 +104,7 @@ class Settings(BaseSettings):
     # Vector Store — FAISS
     # -------------------------------------------------------------------------
     faiss_index_path: str = Field(
-        default="./backend/vector_store/faiss_index",
+        default="./backend/vector_store/faiss.index",
         description="File path for persisting FAISS index",
     )
     embedding_model: str = Field(
