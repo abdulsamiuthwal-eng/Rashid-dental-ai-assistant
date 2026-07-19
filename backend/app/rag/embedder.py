@@ -133,15 +133,10 @@ class Embedder:
     # Private helpers
     # ------------------------------------------------------------------
 
-    @retry(
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=1, min=2, max=10),
-        reraise=True,
-    )
     def _embed_batch(
         self, texts: list[str], task_type: str
     ) -> list[list[float]]:
-        """Call the Google embedding API for a batch of texts.
+        """Call the Google embedding API for a batch of texts with retry on quota limit.
 
         Args:
             texts: Batch of strings.
@@ -150,14 +145,32 @@ class Embedder:
         Returns:
             List of embedding vectors.
         """
-        result = genai.embed_content(
-            model=_EMBEDDING_MODEL,
-            content=texts,
-            task_type=task_type,
-        )
-        # result["embedding"] is a list of vectors when content is a list
-        embeddings: list[list[float]] = result["embedding"]  # type: ignore[index]
-        return embeddings
+        from google.api_core.exceptions import ResourceExhausted
+
+        max_attempts = 5
+        for attempt in range(1, max_attempts + 1):
+            try:
+                result = genai.embed_content(
+                    model=_EMBEDDING_MODEL,
+                    content=texts,
+                    task_type=task_type,
+                )
+                embeddings: list[list[float]] = result["embedding"]  # type: ignore[index]
+                return embeddings
+            except ResourceExhausted as exc:
+                if attempt == max_attempts:
+                    logger.error(f"Failed to embed batch after {max_attempts} attempts due to quota exhaustion.")
+                    raise
+                logger.warning(
+                    f"Rate limit / Quota exceeded during embedding. "
+                    f"Waiting 60 seconds before attempt {attempt + 1}/{max_attempts}..."
+                )
+                time.sleep(60)
+            except Exception:
+                # Let other exceptions propagate or be handled by tenacity if decorated
+                raise
+
+        raise RuntimeError("Failed to embed batch")
 
     @staticmethod
     def _mock_vector(text: str) -> list[float]:
