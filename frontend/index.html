@@ -8,12 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="src/styles/variables.css">
-  <link rel="stylesheet" href="src/styles/reset.css">
   <link rel="stylesheet" href="src/styles/main.css">
   <link rel="stylesheet" href="src/styles/chatbot.css">
 </head>
 <body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
 
   <!-- Navigation -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -37,6 +41,7 @@
 
   <!-- Hero -->
   <section class="hero" aria-label="Welcome">
+    <div id="vanta-bg"></div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-badge">
@@ -70,14 +75,14 @@
   <section class="trust-bar" aria-label="Trust indicators">
     <div class="container">
       <div class="trust-grid">
-        <div class="trust-item reveal">
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
           <div class="trust-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <h3>Expert Team</h3>
           <p>Qualified dental professionals with years of experience</p>
         </div>
-        <div class="trust-item reveal">
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
           <div class="trust-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
@@ -155,47 +160,47 @@
   <!-- Services -->
   <section class="section services" id="services" aria-label="Our Services">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header" data-aos="fade-up">
         <h2>Our Dental Services</h2>
         <p>Comprehensive dental care for the whole family — from routine check-ups to advanced cosmetic procedures.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal" style="transition-delay: 0.05s;">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <h3>General Dentistry</h3>
           <p>Comprehensive check-ups, professional cleanings, digital X-rays, fillings, and extractions to maintain optimal oral health.</p>
         </div>
-        <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="80" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
           </div>
           <h3>Cosmetic Dentistry</h3>
           <p>Professional teeth whitening, premium veneers, and composite bonding to give you a radiant, confident smile.</p>
         </div>
-        <div class="service-card reveal" style="transition-delay: 0.15s;">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="160" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <h3>Restorative Dentistry</h3>
           <p>Custom crowns, bridges, dental implants, and dentures to restore function and aesthetics to your smile.</p>
         </div>
-        <div class="service-card reveal" style="transition-delay: 0.2s;">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="240" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           </div>
           <h3>Orthodontics</h3>
           <p>Traditional braces and clear aligner treatments for straighter teeth and a properly aligned bite.</p>
         </div>
-        <div class="service-card reveal" style="transition-delay: 0.25s;">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="320" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </div>
           <h3>Periodontal Care</h3>
           <p>Scaling and root planing, gum disease treatment, and periodontal maintenance for healthy gums.</p>
         </div>
-        <div class="service-card reveal" style="transition-delay: 0.3s;">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
           </div>
@@ -209,12 +214,12 @@
   <!-- Why Choose Us -->
   <section class="section why-choose-us" aria-label="Why Choose Us">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header" data-aos="fade-up">
         <h2>Why Choose Rashid Dental?</h2>
         <p>We combine clinical excellence with compassionate care to deliver the best dental experience.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card reveal">
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="0">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
@@ -263,12 +268,12 @@
   <!-- Contact -->
   <section class="section contact" id="contact" aria-label="Contact Us">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header" data-aos="fade-up">
         <h2>Get In Touch</h2>
         <p>Ready to book your appointment? Contact us through any of the channels below or fill in the form.</p>
       </div>
       <div class="contact-grid">
-        <div class="contact-info reveal">
+        <div class="contact-info" data-aos="fade-right">
           <h3>Contact Information</h3>
           <div class="contact-details">
             <div class="contact-item">
@@ -309,7 +314,7 @@
             </div>
           </div>
         </div>
-        <div class="contact-form-card reveal">
+        <div class="contact-form-card" data-aos="fade-left">
           <h3>Send Us a Message</h3>
           <p>Fill in the form and we'll get back to you promptly.</p>
           <form id="contact-form" novalidate>
@@ -413,15 +418,28 @@
 
     <div id="chatbot-error" class="chatbot-error" role="alert" style="display: none;"></div>
 
+    <div id="voice-status" class="voice-status">🎤 Listening... speak now</div>
     <div class="chatbot-input-area">
-      <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Type your message..." aria-label="Type your message" autocomplete="off">
+      <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Type or use voice..." aria-label="Type your message" autocomplete="off">
+      <button id="chatbot-voice" class="chatbot-voice" aria-label="Voice input" title="Click to speak">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      </button>
       <button id="chatbot-send" class="chatbot-send" aria-label="Send message">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
     </div>
   </div>
 
+  <!-- Three.js + Vanta.js 3D Background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <!-- AOS Scroll Animations -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Vanilla Tilt 3D Cards -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+  <!-- App Scripts -->
   <script src="src/scripts/main.js"></script>
   <script src="src/scripts/chatbot.js"></script>
+  <script src="src/scripts/enhancements.js"></script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+services:
+  # FastAPI Backend Service
+  - type: web
+    name: rashid-dental-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt && python scripts/build_index.py"
+    startCommand: "uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_NAME
+        value: "Rashid Dental AI Assistant"
+      - key: APP_VERSION
+        value: "1.0.0"
+      - key: APP_HOST
+        value: "0.0.0.0"
+      - key: DEBUG
+        value: "False"
+      - key: DATABASE_URL
+        sync: false # Set this in Render dashboard (Neon URL)
+      - key: GEMINI_API_KEY
+        sync: false # Set this in Render dashboard
+      - key: GEMINI_MODEL
+        value: "gemini-1.5-flash"
+      - key: GEMINI_MAX_OUTPUT_TOKENS
+        value: "1024"
+      - key: GEMINI_TEMPERATURE
+        value: "0.3"
+      - key: FAISS_INDEX_PATH
+        value: "./backend/vector_store/faiss.index"
+      - key: EMBEDDING_MODEL
+        value: "models/gemini-embedding-001"
+      - key: KNOWLEDGE_BASE_PATH
+        value: "./knowledge-base"
+      - key: RAG_TOP_K
+        value: "5"
+      - key: RAG_MAX_CONTEXT_LENGTH
+        value: "4000"
+      - key: CONVERSATION_MEMORY_WINDOW
+        value: "10"
+      - key: CONVERSATION_SESSION_TTL
+        value: "3600"
+      - key: LOG_LEVEL
+        value: "INFO"
+      - key: ALLOWED_ORIGINS
+        value: '["*"]' # Allow all origins for production static frontend access
