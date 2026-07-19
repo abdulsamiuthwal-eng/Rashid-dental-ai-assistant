@@ -85,7 +85,7 @@ langchain-text-splitters==0.2.2
 # -----------------------------------------------------------------------------
 
 # FAISS CPU: Facebook AI Similarity Search (CPU-only, no GPU required)
-faiss-cpu==1.8.0
+faiss-cpu>=1.12.0
 
 
 # -----------------------------------------------------------------------------
