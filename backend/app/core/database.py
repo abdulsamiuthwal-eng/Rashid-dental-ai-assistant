@@ -38,17 +38,45 @@ if not db_url:
     # Use a dummy postgres URL so create_async_engine doesn't crash on empty string
     db_url = "postgresql+asyncpg://postgres:postgres@localhost:5432/dummy"
 
+def _clean_db_url(url: str) -> str:
+    """Remove asyncpg-incompatible query params from the database URL.
+
+    Neon and some hosted PostgreSQL providers include params like
+    `channel_binding=require` and `sslmode=require` that asyncpg
+    does not accept as query-string parameters.  We strip them here
+    and handle SSL via connect_args instead.
+    """
+    from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
+    parsed = urlparse(url)
+    params = parse_qs(parsed.query, keep_blank_values=True)
+    # Remove params asyncpg cannot handle
+    for bad in ("channel_binding", "sslmode"):
+        params.pop(bad, None)
+    new_query = urlencode(params, doseq=True)
+    return urlunparse(parsed._replace(query=new_query))
+
+
 engine: AsyncEngine | None = None
 async_session_maker: async_sessionmaker[AsyncSession] | None = None
 
 try:
     is_sqlite = db_url.startswith("sqlite")
+    is_postgres = db_url.startswith("postgresql")
+    clean_url = _clean_db_url(db_url) if is_postgres else db_url
+
+    connect_args: dict = {}
+    if is_postgres:
+        import ssl as _ssl
+        ssl_ctx = _ssl.create_default_context()
+        connect_args["ssl"] = ssl_ctx
+
     engine = create_async_engine(
-        db_url,
+        clean_url,
         **( {"pool_size": settings.db_pool_size, "max_overflow": settings.db_max_overflow}
             if not is_sqlite else {} ),
+        connect_args=connect_args,
         future=True,
-        echo=False,  # Set to True for SQL queries logging if settings.debug is True
+        echo=False,
     )
     async_session_maker = async_sessionmaker(
         bind=engine,

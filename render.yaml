@@ -3,7 +3,7 @@ services:
   - type: web
     name: rashid-dental-backend
     env: python
-    buildCommand: "pip install -r requirements.txt && python scripts/build_index.py --mock"
+    buildCommand: "pip install -r requirements.txt && python scripts/build_index.py"
     startCommand: "uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: APP_ENV
@@ -16,10 +16,12 @@ services:
         value: "0.0.0.0"
       - key: DEBUG
         value: "False"
+      - key: SECRET_KEY
+        generateValue: true
       - key: DATABASE_URL
-        sync: false # Set this in Render dashboard (Neon URL)
+        sync: false   # Set in Render dashboard — use URL WITHOUT channel_binding=require
       - key: GEMINI_API_KEY
-        sync: false # Set this in Render dashboard
+        sync: false   # Set in Render dashboard
       - key: GEMINI_MODEL
         value: "gemini-1.5-flash"
       - key: GEMINI_MAX_OUTPUT_TOKENS
@@ -29,7 +31,7 @@ services:
       - key: FAISS_INDEX_PATH
         value: "./backend/vector_store/faiss.index"
       - key: EMBEDDING_MODEL
-        value: "models/gemini-embedding-001"
+        value: "models/embedding-001"
       - key: KNOWLEDGE_BASE_PATH
         value: "./knowledge-base"
       - key: RAG_TOP_K
@@ -43,4 +45,4 @@ services:
       - key: LOG_LEVEL
         value: "INFO"
       - key: ALLOWED_ORIGINS
-        value: '["*"]' # Allow all origins for production static frontend access
+        value: '["*"]'
